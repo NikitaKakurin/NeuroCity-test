@@ -69,7 +69,7 @@ class Slider{
   	this.sliderItems[this.currentItem].classList.add(direction);
   	this.sliderItems[this.currentItem].addEventListener('animationend', function() {
   		this.classList.remove('slider__item-active', direction);
-  	});
+  	}, {once:true});
   }
 
   showItem = (direction) => {
@@ -79,7 +79,7 @@ class Slider{
   		currentSlider.classList.remove('slider__item-next', direction);
   		currentSlider.classList.add('slider__item-active');
   		this.isEnabled = true;
-  	});
+  	}, {once:true});
   }
 
   leafToPrev = () => {
