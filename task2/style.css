@@ -1,3 +1,170 @@
 *{
   box-sizing: border-box;
 }
+
+h2{
+  text-align: center;
+}
+
+.container{
+  margin: 0 auto;
+  width: 700px;
+  height: 150px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.circle{
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px black solid;
+  animation: 5s ease-in-out;
+}
+
+.circle__container_sections{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.circle__section{
+  width: 50%;
+  height: 100%;
+}
+
+.circle__section-first {
+  background: orange;
+}
+
+.circle__section-second {
+  background: green;
+}
+
+.circle__section-third {
+  background: red;
+}
+
+.circle__section-fourth {
+  background: blue;
+}
+
+.to-right {
+  animation-name: right;
+  animation-iteration-count: infinite;
+}
+
+@keyframes right {
+  0% {
+    left: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    left: 600px;
+    transform: rotate(900deg);
+  }
+  100%{
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+
+/* -------rectangle---------- */
+
+.rectangle{
+  width: 150px;
+  height: 100px;
+  background: linear-gradient(to left, #333, #333 50%, rgb(236, 206, 100) 51%, rgb(236, 206, 100) 75%);
+  animation: 3s ease-in-out;
+}
+
+.rect-anim {
+  animation-name: balance;
+  animation-iteration-count: infinite;
+}
+
+@keyframes balance {
+  0% {
+    transform: rotateY(0deg) scale(100%);;
+  }
+
+  50% {
+    transform: rotateY(180deg) scale(120%);
+  }
+
+  100% {
+    transform: rotateY(0deg) scale(100%);
+  }
+}
+
+
+/* -------square---------- */
+
+.square {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  animation: 6s ease-in-out;
+}
+
+.square-anim {
+  animation-name: spiral;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spiral {
+  0% {
+    transform: rotate(0deg);
+    background: blue;
+  }
+
+  50% {
+    transform: rotate(1800deg) translateX(120%);
+    background: red;
+  }
+
+  100% {
+    transform: rotate(0deg) translateX(0%);
+    background: blue;
+  }
+}
+
+
+/* -------triangle---------- */
+
+.triangle {
+  display: inline;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid black;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  animation: 1s ease-in-out;
+}
+
+.triangle-anim {
+  animation-name: fly;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+    transform: scale(200%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+
+}
+
