@@ -135,11 +135,85 @@ class Slider{
     this.sliderItemsWrapper.append(...this.sliderItems)
   }
 
+  swipedetect = (el) => {
+	  let surface = el;
+	  let startX = 0;
+	  let startY = 0;
+	  let distX = 0;
+	  let distY = 0;
+	  let startTime = 0;
+	  let elapsedTime = 0;
+    
+	  let threshold = 50;
+	  let restraint = 200;
+	  let allowedTime = 500;
+
+    const checkDirection = () => {
+      if (elapsedTime <= allowedTime){
+	  		if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
+	  			if ((distX > 0)) {
+	  					this.leafToPrev();
+	  			} else {
+	  					this.leafToNext();
+	  			}
+	  		}
+	  	}
+    }
+    
+	  surface.addEventListener('mousedown', (e)=>{
+	  	startX = e.pageX;
+	  	startY = e.pageY;
+	  	startTime = new Date().getTime();
+	  	e.preventDefault();
+	  }, false);
+  
+	  surface.addEventListener('mouseup', (e)=>{
+      if (!this.isEnabled) return;
+	  	distX = e.pageX - startX;
+	  	distY = e.pageY - startY;
+      checkDirection();
+	  	e.preventDefault();
+	  }, false);
+  
+	  surface.addEventListener('touchstart', (e)=>{
+        if (!this.isEnabled) return;
+        if(e.target.classList.contains('slider__icon-prev')) {
+          this.leafToPrev();
+          return;
+        }
+      
+        if(e.target.classList.contains('slider__icon-next')) {
+          this.leafToNext();
+          return;
+        } 
+	  	
+	  		let touchobj = e.changedTouches[0];
+	  		startX = touchobj.pageX;
+	  		startY = touchobj.pageY;
+	  		startTime = new Date().getTime();
+	  		e.preventDefault();
+	  }, false);
+  
+	  surface.addEventListener('touchmove', (e)=>{
+	  		e.preventDefault();
+	  }, false);
+  
+	  surface.addEventListener('touchend', (e)=>{
+        if (!this.isEnabled) returnl
+	  		let touchobj = e.changedTouches[0];
+	  		distX = touchobj.pageX - startX;
+	  		distY = touchobj.pageY - startY;
+        checkDirection();
+	  		e.preventDefault();
+	  }, false);
+  }
+
   initialization = (imagesData) => {
     this.createImages(imagesData);  
     this.createButtons();
 
     this.slider.append(this.sliderItemsWrapper, this.controls)
+    this.swipedetect(this.controls)
   }
 }
 
