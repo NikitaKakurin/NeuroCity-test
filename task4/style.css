@@ -1,3 +1,63 @@
 *{
   box-sizing: border-box;
 }
+
+.users{
+  padding-top: 30px;
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 2px solid gray;
+}
+
+.card__email {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.card__email:hover {
+  color:rgb(9, 9, 90);
+}
+
+.pagination{
+  padding-top: 20px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination__item {
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid gray;
+  background: rgb(222, 230, 230);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pagination__item:hover {
+  background: rgb(216, 216, 216);
+}
+
+.pagination__item-active {
+  border: 2px solid rgb(14, 38, 174);
+}
