@@ -14,7 +14,8 @@
 }
 
 .card {
-  height: 100%;
+  height: 260px;
+  width: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +23,7 @@
   margin: 0 auto;
   padding: 20px;
   border: 2px solid gray;
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
 .card__email {
