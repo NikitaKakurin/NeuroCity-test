@@ -1,3 +1,146 @@
 *{
   box-sizing: border-box;
 }
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.subject{
+  opacity: 0;
+}
+
+.subject-show {
+  opacity: 1;
+}
+
+.triangle{
+  background-color: green;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  width: 100px;
+  height: 100px;
+}
+
+.square {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+}
+
+.rectangle {
+  background-color: red;
+  width: 150px;
+  height: 100px;
+}
+
+.button {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+    
+.button:hover,
+.button:focus {
+  background-color: #07c;
+}
+    
+.button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+    
+.button:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+.container{
+  height: 400px;
+}
+
+.bounceIn {
+  animation: bounceIn 1s both;
+}
+
+
+@keyframes bounceIn {
+
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(.97, .97, .97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+ .bounceOut {
+   animation: bounceOut 1s both;
+ }
+  
+@keyframes bounceOut {
+  20% {
+    transform: scale3d(.9, .9, .9);
+  }
+   
+  50%,
+  55% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+   
+  100% {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+  }
+}
