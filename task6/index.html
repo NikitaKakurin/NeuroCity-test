@@ -6,10 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
-  <title>Task1</title>
+  <title>Task6</title>
 </head>
 <body>
   
+  <form action="" class="form" id="form">
+    <div class="form__input_wrapper">
+      <label for="name">Enter your name:</label>
+      <input class='form__input' name="name" type="text" id="name" required minlength="3" maxlength="30">
+    </div>
+
+    <div class="form__input_wrapper">
+      <label for="tel">Enter your phone number:</label>
+      <input class='form__input' name="phone" type="text" id="tel" required>
+    </div>
+
+    <div class="form__input_wrapper">
+      <label for="tel">Enter password:</label>
+      <input class='form__input' name="pass" type="text" id="pass" required minlength="8" maxlength="40">
+    </div>
+
+    <div class="form__input_wrapper">
+      <label for="tel">Repeat password:</label>
+      <input class='form__input' name="passRepeat" type="password" id="passRepeat" required minlength="8" maxlength="40">
+    </div>
+
+    <button type="submit">Отправить</button>
+  </form>
+
   <script src="index.js"></script>
 </body>
 </html>
